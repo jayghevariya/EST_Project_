@@ -32,9 +32,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <Switch>
-      <Route path="/" render={(props) => <AdminLayout {...props} />} />
-      {/* <Redirect to="/admin/maps" /> */}
-      {/* <Route path="/" render={(props) => <AdminLayout {...props} />} /> */}
+      <Route path="/admin" render={(props) => <AdminLayout {...props} />} />
+      <Redirect to="/admin/maps" />
     </Switch>
   </BrowserRouter>
 );
