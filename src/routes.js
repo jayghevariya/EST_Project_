@@ -23,6 +23,7 @@ import Krishna from "views/Krishna.js";
 import Maps from "views/Map.js";
 import Gulfofkachh from "views/gulf-of-kachh.js";
 import Dataset from "views/Dataset.js";
+import Home from "views/Home.js";
 
 var routes = [
   {
@@ -30,21 +31,21 @@ var routes = [
     name: "Home",
     icon: "nc-icon nc-pin-3",
     component: Maps,
-    layout: "/admin"
+    layout: "/"
   },
   {
     path: "/andaman",
     name: "Andaman and Nicobar",
     icon: "nc-icon nc-Tree",
     component: Andaman,
-    layout: "/admin"
+    layout: "/"
   },
   {
     path: "/bhitarkanika",
     name: "Bhitarkanika",
     icon: "nc-icon nc-diamond",
     component: Bhitarkanika,
-    layout: "/admin"
+    layout: "/"
   },
   
   {
@@ -52,28 +53,35 @@ var routes = [
     name: "Sunderbans",
     icon: "nc-icon nc-bell-55",
     component: Sunderbans,
-    layout: "/admin"
+    layout: "/"
   },
   {
     path: "/gulf-of-kachh",
     name: "Gulf of Kachh",
     icon: "nc-icon nc-single-02",
     component: Gulfofkachh,
-    layout: "/admin"
+    layout: "/"
   },
   {
     path: "/krishna-godavari",
     name: "Krishna-Godavari",
     icon: "nc-icon nc-tile-56",
     component: Krishna,
-    layout: "/admin"
+    layout: "/"
   },
   {
     path: "/dataset",
     name: "Overall dataset",
     icon: "nc-icon nc-tile-56",
     component: Dataset,
-    layout: "/admin"
+    layout: "/"
   },
+  {
+    path: "/",
+    name: "Home",
+    icon: "nc-icon nc-pin-3",
+    component: Home,
+    layout: "/"
+  }
 ];
 export default routes;
