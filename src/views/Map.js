@@ -48,7 +48,7 @@ function Map() {
   // "11.42" ]
   const long = ["69.9550", " 87.00", "89.1833", "92", "82.11"]
   // "79.77"]
-  const name = ["Gulf of Kachchh", "Bhitarkanika", "Sundarbans", "Andaman and Nicobar", "Krishna-Godavari"];
+  const name = ["gulf-of-kachh", "Bhitarkanika", "sunderbans", "andaman", "Krishna-Godavari"];
   // "Pichavaram"]
   const position = [lat.map((item) => item), long.map((item) => item)]
   return (
