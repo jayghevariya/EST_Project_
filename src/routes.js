@@ -56,7 +56,7 @@ var routes = [
   },
   {
     path: "/gulf-of-kachh",
-    name: "Gulf of Kachh",
+    name: "Gulf of Kachchh",
     icon: "nc-icon nc-single-02",
     component: Gulfofkachh,
     layout: "/admin"
