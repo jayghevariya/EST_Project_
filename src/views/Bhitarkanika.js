@@ -12,6 +12,7 @@ import {
   Col
 } from "reactstrap";
 // core components
+import "./text.css";
 import {
   LandCoverLine,
   SpeciesPieChart,
@@ -32,7 +33,7 @@ const MangroveSpeciesPieChart = () => {
   const legendColors = SpeciesPieChartColors(currMangrove);
   const legendLabels = SpeciesPieChartLabels(currMangrove);
   // console.log(legendColors)
-  const indices = Array.from({length: legendColors.length}, (_, i) => i);
+  const indices = Array.from({ length: legendColors.length }, (_, i) => i);
   const half = Number(Math.ceil(legendColors.length / 2));
 
   return (
@@ -48,32 +49,32 @@ const MangroveSpeciesPieChart = () => {
         />
       </CardBody>
       <CardFooter>
-        <div 
-          style={{ 
-            display: "flex", 
-            flexDirection: "row", 
-            justifyContent: "space-around", 
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
             alignItems: "center"
-        }}
+          }}
         >
           <div className="legend">
             {indices.slice(0, half).map((index) => {
               return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
+                <>
+                  <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                  {` ${legendLabels[index]}`}
+                  <br />
+                </>);
             })}
           </div>
           <div className="legend">
             {indices.slice(half).map((index) => {
               return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
+                <>
+                  <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                  {` ${legendLabels[index]}`}
+                  <br />
+                </>);
             })}
           </div>
         </div>
@@ -93,7 +94,7 @@ function MangroveLandCoverPieChart() {
   const legendColors = LandPieChartColors(currMangrove);
   const legendLabels = LandPieChartLabels(currMangrove);
   // console.log(legendColors)
-  const indices = Array.from({length: legendColors.length}, (_, i) => i);
+  const indices = Array.from({ length: legendColors.length }, (_, i) => i);
   const half = Number(Math.ceil(legendColors.length / 2));
 
   return (
@@ -109,32 +110,32 @@ function MangroveLandCoverPieChart() {
         />
       </CardBody>
       <CardFooter>
-        <div 
-          style={{ 
-            display: "flex", 
-            flexDirection: "row", 
-            justifyContent: "space-around", 
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-around",
             alignItems: "center"
-        }}
+          }}
         >
           <div className="legend">
             {indices.slice(0, half).map((index) => {
               return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
+                <>
+                  <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                  {` ${legendLabels[index]}`}
+                  <br />
+                </>);
             })}
           </div>
           <div className="legend">
             {indices.slice(half).map((index) => {
               return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
+                <>
+                  <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                  {` ${legendLabels[index]}`}
+                  <br />
+                </>);
             })}
           </div>
         </div>
@@ -153,76 +154,76 @@ function LandCoverLineChart() {
   const currMangrove = localStorage.getItem('currMangrove');
   const legendColors = LandCoverLineColors(currMangrove);
   const legendLabels = LandCoverLineLabels(currMangrove);
-  const indices = Array.from({length: legendColors.length}, (_, i) => i);
+  const indices = Array.from({ length: legendColors.length }, (_, i) => i);
   const half = Number(Math.ceil(legendColors.length / 2));
 
   return (
     <>
-    <Card className="card-chart">
-      <CardHeader>
-        <CardTitle tag="h5">Land Cover Distribution</CardTitle>
-        <p className="card-category">Line Chart with Points</p>
-      </CardHeader>
-      <CardBody>
-        <Line
-          data={data}
-          options={options}
-          width={400}
-          height={100}
-        />
-      </CardBody>
-      <CardFooter>
-      <div 
-          style={{ 
-            display: "flex", 
-            flexDirection: "row", 
-            justifyContent: "space-around", 
-            alignItems: "center"
-        }}
-        >
-          <div className="legend">
-            {indices.slice(0, half).map((index) => {
-              return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
-            })}
+      <Card className="card-chart">
+        <CardHeader>
+          <CardTitle tag="h5">Land Cover Distribution</CardTitle>
+          <p className="card-category">Line Chart with Points</p>
+        </CardHeader>
+        <CardBody>
+          <Line
+            data={data}
+            options={options}
+            width={400}
+            height={100}
+          />
+        </CardBody>
+        <CardFooter>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-around",
+              alignItems: "center"
+            }}
+          >
+            <div className="legend">
+              {indices.slice(0, half).map((index) => {
+                return (
+                  <>
+                    <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                    {` ${legendLabels[index]}`}
+                    <br />
+                  </>);
+              })}
+            </div>
+            <div className="legend">
+              {indices.slice(half).map((index) => {
+                return (
+                  <>
+                    <i className="fa fa-circle" style={{ color: legendColors[index] }} />
+                    {` ${legendLabels[index]}`}
+                    <br />
+                  </>);
+              })}
+            </div>
           </div>
-          <div className="legend">
-            {indices.slice(half).map((index) => {
-              return (
-              <>
-                <i className="fa fa-circle" style={{ color: legendColors[index] }} />
-                {` ${legendLabels[index]}`}
-                <br />
-              </>);
-            })}
-          </div>
-        </div>
-      </CardFooter>
-    </Card>
+        </CardFooter>
+      </Card>
     </>);
 }
 
 function Dashboard() {
   const useBeforeRender = (callback, deps) => {
-      const [isRun, setIsRun] = React.useState(false);
+    const [isRun, setIsRun] = React.useState(false);
 
-      if (!isRun) {
-          callback();
-          setIsRun(true);
-      }
+    if (!isRun) {
+      callback();
+      setIsRun(true);
+    }
 
-      React.useEffect(() => () => setIsRun(false), deps);
+    React.useEffect(() => () => setIsRun(false), deps);
   };
   useBeforeRender(() => localStorage.setItem('currMangrove', 'Bhitarkanika'), []);
 
 
   return (
     <>
-      <div className="content">
+      <div className="content" style={{'marginTop': '3vh'}}>
         <Row>
           <Col md="6">
             <MangroveSpeciesPieChart />
@@ -230,6 +231,17 @@ function Dashboard() {
           <Col md="6">
             <MangroveLandCoverPieChart />
           </Col>
+        </Row>
+        <Row>
+          <Card>
+            <Col md="12">
+              <h3 className="head_align"><u>Bhitarkanika Land and Species analysis</u></h3><br/>
+              <h5>Bhitarkanika mangrove foresr is sprean in an area of 672 km2.
+                Most of the landscapes are occupied by mangrove forests whose area increased from 2000 to 2006 and decreased from 2006 to 2015.Of India's 58 recorded species of mangroves, 55 species are found in Bhitarkanika.</h5>
+              <h5>The mangrove forests of Bhitarkanika mangrove ecosystem are the one of the largest mangrove forests of mainland India.Brahmani river receives inputs of untreated domestic and industrial wastes (including organic matter, oil and heavy metal).
+                <br />Pollution in Brahmani river and extraction of freshwater from it has altered the salinity of the water. Mangroves of Bhitarkanika, grow in brackish water, are sensitive to changes in salinity.</h5>
+            </Col>
+          </Card>
         </Row>
         <Row>
           <Col md="12">

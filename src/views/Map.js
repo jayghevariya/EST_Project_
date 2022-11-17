@@ -28,6 +28,7 @@ import { useHistory } from "react-router-dom";
 import { useEffect, useState } from "react"
 import { Card, CardHeader, CardBody, Row, Col } from "reactstrap";
 import { NavLink } from "react-router-dom";
+import "./text.css";
 
 let DefaultIcon = L.icon({
   iconUrl: icon,
@@ -44,16 +45,16 @@ function Map() {
     url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png'
   }
   //create a 2d array of lat and long
-  const lat = ["22.7443", "20.74", "21.9497", "13", "16.70"]
+  const lat = ["22.7443", "20.74", "21.8348400", "13", "16.70"]
   // "11.42" ]
-  const long = ["69.9550", " 87.00", "89.1833", "92", "82.11"]
+  const long = ["69.9550", " 87.00", "88.8939847", "92", "82.11"]
   // "79.77"]
   const name = ["gulf-of-kachh", "Bhitarkanika", "sunderbans", "andaman", "Krishna-Godavari"];
   // "Pichavaram"]
   const position = [lat.map((item) => item), long.map((item) => item)]
   return (
     <>
-      <div className="content">
+      <div className="content" style={{ 'marginTop': '3vh' }}>
         <Row>
           <Col md="12">
             <Card>
@@ -65,36 +66,53 @@ function Map() {
                   style={{ position: "relative", overflow: "hidden" }}
                 >
                   <MapContainer style={{ height: '70vh', width: '82vw' }}
-                        center={[14.8, 77.4]} zoom={5} scrollWheelZoom={true}>
-                        <TileLayer {...tileLayer} />
-                        <MarkerClusterGroup
-                            chunkedLoading
-                        >
-                            {lat.map((users1, index) =>
-                                <>
-                                    <Marker
-                                     position={[lat[index], long[index], "abc"]} 
-                                      // onClick={() => navigate.push(`/${name[index]}`)}
-                                      eventHandlers={{
-                                        click: (e) => {
-                                          // // console.log('marker clicked', e)
-                                          navigate.push(`/admin/${name[index]}`)
-                                        },
-                                      }}
+                    center={[14.8, 77.4]} zoom={5} scrollWheelZoom={true}>
+                    <TileLayer {...tileLayer} />
+                    <MarkerClusterGroup
+                      chunkedLoading
+                    >
+                      {lat.map((users1, index) =>
+                        <>
+                          <Marker
+                            position={[lat[index], long[index], "abc"]}
+                            // onClick={() => navigate.push(`/${name[index]}`)}
+                            eventHandlers={{
+                              click: (e) => {
+                                // // console.log('marker clicked', e)
+                                navigate.push(`/admin/${name[index]}`)
+                              },
+                            }}
 
-                                    >
-                                        <Tooltip>
-                                            Mangrove: {name[index]}
-                                        </Tooltip>
-                                    </Marker>
-                                </>
-                            )}
-                        </MarkerClusterGroup>
-                    </MapContainer>
+                          >
+                            <Tooltip>
+                              Mangrove: {name[index]}
+                            </Tooltip>
+                          </Marker>
+                        </>
+                      )}
+                    </MarkerClusterGroup>
+                  </MapContainer>
                 </div>
               </CardBody>
             </Card>
           </Col>
+        </Row>
+        <Row>
+          <Card>
+            <Col md="12">
+              <h3 className="head_align">Overview</h3>
+              <h5>India has about 3% of the total Mangrove cover in South AsiaThe current assessment shows that mangrove cover in the country is 4,975 sq km [(1.2 million acres)], which is 0.15% of the country’s total geographical area.</h5>
+              <h5>West Bengal has the highest percentage of area under total Mangrove cover followed by Gujarat and Andaman Nicobar Islands.</h5>
+              <h5>Mangroves face limiting factors like:</h5>
+              <ul>
+                <li><h5>Lack of Oxygen</h5></li>
+                <li><h5>High Salinity</h5></li>
+                <li><h5>Diurnal Tidal Inundations</h5></li>
+              </ul>
+              <h5>India with a long coastline of about 7516.6 km, including the island territories, had a mangrove cover of about 6,749 km2, the fourth largest mangrove area in the world.India lost 40% of its mangrove area during the last century.</h5>
+            </Col>
+          </Card>
+
         </Row>
       </div>
     </>
