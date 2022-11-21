@@ -23,6 +23,7 @@ import Krishna from "views/Krishna.js";
 import Maps from "views/Map.js";
 import Gulfofkachh from "views/gulf-of-kachh.js";
 import Dataset from "views/Dataset.js";
+import Species from "views/Species.js";
 
 var routes = [
   {
@@ -73,6 +74,13 @@ var routes = [
     name: "Overall dataset",
     icon: "nc-icon nc-tile-56",
     component: Dataset,
+    layout: "/admin"
+  },
+  {
+    path: "/species",
+    name: "Species List",
+    icon: "nc-icon nc-tile-56",
+    component: Species,
     layout: "/admin"
   },
 ];
