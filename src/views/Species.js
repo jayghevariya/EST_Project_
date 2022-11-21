@@ -116,7 +116,7 @@ const SpeciesCoverTable = ({ mangroveKey }) => {
 }
 
 function Dataset() {
-    const [mangrove, setMangrove] = React.useState("Krishna");
+    const [mangrove, setMangrove] = React.useState("All");
 
     
     const mangroveName = new Map([
